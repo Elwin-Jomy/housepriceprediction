@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Match Prediction</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+            overflow:hidden;
+        }
+
+        body::before{
+            content:'';
+            position:absolute;
+            width:500px;
+            height:500px;
+            background:rgba(255,255,255,0.08);
+            border-radius:50%;
+            top:-150px;
+            left:-150px;
+        }
+
+        body::after{
+            content:'';
+            position:absolute;
+            width:400px;
+            height:400px;
+            background:rgba(255,255,255,0.05);
+            border-radius:50%;
+            bottom:-120px;
+            right:-120px;
+        }
+
+        .container{
+            position:relative;
+            width:450px;
+            padding:45px;
+            border-radius:25px;
+            background:rgba(255,255,255,0.12);
+            backdrop-filter:blur(15px);
+            box-shadow:0 10px 40px rgba(0,0,0,0.4);
+            border:1px solid rgba(255,255,255,0.2);
+            color:white;
+            z-index:10;
+            animation:fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        h1{
+            text-align:center;
+            font-size:34px;
+            margin-bottom:10px;
+            font-weight:700;
+        }
+
+        p{
+            text-align:center;
+            font-size:15px;
+            color:#dbeafe;
+            margin-bottom:30px;
+        }
+
+        .input-box{
+            margin-bottom:18px;
+        }
+
+        input{
+            width:100%;
+            padding:16px;
+            border:none;
+            border-radius:14px;
+            background:rgba(255,255,255,0.15);
+            color:white;
+            font-size:15px;
+            outline:none;
+            transition:0.3s;
+        }
+
+        input::placeholder{
+            color:#d1d5db;
+        }
+
+        input:focus{
+            background:rgba(255,255,255,0.25);
+            transform:scale(1.02);
+        }
+
+        button{
+            width:100%;
+            padding:16px;
+            border:none;
+            border-radius:14px;
+            background:linear-gradient(135deg,#22c55e,#16a34a);
+            color:white;
+            font-size:18px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+            margin-top:10px;
+        }
+
+        button:hover{
+            transform:translateY(-2px);
+            box-shadow:0 8px 20px rgba(34,197,94,0.4);
+        }
+
+        .prediction{
+            margin-top:30px;
+            text-align:center;
+            padding:18px;
+            border-radius:16px;
+            background:rgba(255,255,255,0.12);
+            font-size:24px;
+            font-weight:600;
+            color:#facc15;
+            min-height:70px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:22px;
+            font-size:13px;
+            color:#cbd5e1;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>⚽ Football Match Prediction</h1>
+
+        <p>
+            Predict football match outcomes using Artificial Intelligence & Machine Learning
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <div class="input-box">
+                <input
+                    type="number"
+                    name="HTGS"
+                    placeholder="🏠 Home Team Goals Scored"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="number"
+                    name="ATGS"
+                    placeholder="✈️ Away Team Goals Scored"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="number"
+                    name="HTGD"
+                    placeholder="📈 Home Team Goal Difference"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="number"
+                    name="ATGD"
+                    placeholder="📉 Away Team Goal Difference"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <input
+                    type="number"
+                    name="DiffPts"
+                    placeholder="🏆 Points Difference"
+                    required
+                >
+            </div>
+
+            <button type="submit">
+                Predict Match ⚡
+            </button>
+
+        </form>
+
+        <div class="prediction">
+            {{ prediction_text }}
+        </div>
+
+        <div class="footer">
+            AI Powered Football Prediction System
+        </div>
+
+    </div>
+
+</body>
+
+</html>

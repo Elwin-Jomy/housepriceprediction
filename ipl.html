@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tottenham Hotspur</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        /* Navbar */
+
+        nav{
+            background:#001C58;
+            color:white;
+            padding:20px 60px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            font-size:32px;
+            letter-spacing:2px;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:30px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#A7C6ED;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            height:90vh;
+            background:url('bg.jpg') no-repeat center center/cover;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            position:relative;
+        }
+
+        .hero::before{
+            content:"";
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.5);
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:1;
+        }
+
+        .hero-content h2{
+            font-size:60px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:22px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            padding:14px 30px;
+            background:#001C58;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#00308F;
+        }
+
+        /* Sections */
+
+        .section{
+            padding:70px 50px;
+        }
+
+        .section h2{
+            text-align:center;
+            margin-bottom:50px;
+            color:#001C58;
+            font-size:40px;
+        }
+
+        /* Cards */
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .card-content{
+            padding:20px;
+        }
+
+        .card-content h3{
+            margin-bottom:10px;
+            color:#001C58;
+        }
+
+        .card-content p{
+            color:#555;
+            line-height:1.6;
+        }
+
+        /* Player Cards */
+
+        .player-card img{
+            height:300px;
+        }
+
+        .player-info{
+            text-align:center;
+            padding:20px;
+        }
+
+        .player-info h3{
+            color:#001C58;
+            margin-bottom:10px;
+        }
+
+        .player-info p{
+            margin:5px 0;
+            color:#555;
+        }
+
+        /* Footer */
+
+        footer{
+            background:#001C58;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <h1>SPURS</h1>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Players</a></li>
+            <li><a href="#">Fixtures</a></li>
+            <li><a href="#">Tickets</a></li>
+            <li><a href="#">Shop</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+            <h2>To Dare Is To Do</h2>
+
+            <p>Welcome to the Home of Tottenham Hotspur Football Club</p>
+
+            <a href="#" class="btn">Explore More</a>
+        </div>
+
+    </section>
+
+    <!-- Latest News -->
+
+    <section class="section">
+
+        <h2>Latest News</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="pr.webp">
+
+                <div class="card-content">
+                    <h3>Match Preview</h3>
+                    <p>Get ready for the upcoming Premier League clash this weekend.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="pl.jpg">
+
+                <div class="card-content">
+                    <h3>Player Spotlight</h3>
+                    <p>Exclusive interview and highlights from our top players.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="st.jpg">
+
+                <div class="card-content">
+                    <h3>Stadium Tour</h3>
+                    <p>Experience Tottenham Hotspur Stadium like never before.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Players Section -->
+
+    <section class="section">
+
+        <h2>First Team Players</h2>
+
+        <div class="cards">
+
+            <div class="card player-card">
+                <img src="son.png">
+
+                <div class="player-info">
+                    <h3>Heung-Min Son</h3>
+                    <p>Position: Forward</p>
+                    <p>Number: 7</p>
+                </div>
+            </div>
+
+            <div class="card player-card">
+                <img src="madison.png">
+
+                <div class="player-info">
+                    <h3>James Maddison</h3>
+                    <p>Position: Midfielder</p>
+                    <p>Number: 10</p>
+                </div>
+            </div>
+
+            <div class="card player-card">
+                <img src="romero.png">
+
+                <div class="player-info">
+                    <h3>Cristian Romero</h3>
+                    <p>Position: Defender</p>
+                    <p>Number: 17</p>
+                </div>
+            </div>
+
+            <div class="card player-card">
+                <img src="kane.png">
+
+                <div class="player-info">
+                    <h3>Harry Kane</h3>
+                    <p>Position: Striker</p>
+                    <p>Number: 9</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <p>© 2026 Tottenham Hotspur Fan Website | COYS 💙</p>
+    </footer>
+
+</body>
+</html>
